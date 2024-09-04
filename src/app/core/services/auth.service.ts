@@ -34,5 +34,9 @@ export class AuthService {
   private isTokenAvailable(): boolean {
     return !!localStorage.getItem('App:jwt');
   }
-
+  async logout(): Promise<any> {
+    await localStorage.clear();
+    this.setIsLoggedIn(false);
+    await this.router.navigate(['auth/login']);
+  }
 }

@@ -12,8 +12,17 @@
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="bi bi-bell"></i></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-person-circle"></i></a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
+            <i class="bi bi-person-circle"></i> {{username}}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" style="cursor: pointer;" (click)="logout()">Logout</a></li>
+          </ul>
         </li>
       </ul>
     </div>

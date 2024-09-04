@@ -1,13 +1,10 @@
-
-
-.navbar-brand {
-  font-weight: bold;
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  /* Adjusts the dropdown menu position */
 }
 
-.nav-link {
-  color: #333;
-}
-
-.bg-header{
-  background-color: #f1f1eb;
+.navbar-nav .dropdown-toggle::after {
+  display: none;
+  /* Hides the default arrow */
 }

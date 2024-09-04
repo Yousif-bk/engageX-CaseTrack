@@ -59,18 +59,36 @@ export class CreateCaseComponent implements OnInit {
       this.uiState.isLoading = false
       return
     }
+    const summary = this.createCaseForm.get('subject')?.value;
+    const description = this.createCaseForm.get('description')?.value;
+
+    const jiraData = {
+      summary: summary,
+      description: description
+    };
     this.appService.createCaseRequesr(this.createCaseForm.value).subscribe(
       {
         next: (res) => {
           this.uiState.isLoading = false,
-            this.router.navigate(['case/list'])
+            this.appService.createCaseJira(jiraData).subscribe(
+              {
+                next: (jiraResponse) => {
+                  this.uiState.isLoading = false;
+                  this.router.navigate(['case/list']);
+                },
+                error: (jiraError) => {
+                  this.uiState.isLoading = false;
+                  console.error('Error creating case in Jira:', jiraError);
+                }
+              }
+            )
         },
         error: (error) => {
-          this.uiState.isLoading = false,
-            setTimeout(() => {
-            }, 4000);
+          this.uiState.isLoading = false;
+          console.error('Error creating case:', error);
         }
       }
     )
   }
+
 }
