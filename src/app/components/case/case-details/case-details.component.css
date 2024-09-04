@@ -1,0 +1,27 @@
+.card {
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #4b0f1e;
+}
+
+.text-muted {
+  font-weight: 600;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}

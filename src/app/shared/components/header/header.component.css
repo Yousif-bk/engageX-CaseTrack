@@ -1,6 +1,4 @@
-.navbar {
-  padding: 1rem;
-}
+
 
 .navbar-brand {
   font-weight: bold;
@@ -8,4 +6,8 @@
 
 .nav-link {
   color: #333;
+}
+
+.bg-header{
+  background-color: #f1f1eb;
 }

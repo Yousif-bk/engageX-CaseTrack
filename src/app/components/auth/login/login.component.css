@@ -1,0 +1,27 @@
+.container {
+  margin-top: 5rem;
+}
+
+.card {
+  border-radius: 0.75rem;
+  padding: 2rem;
+  /* Increased padding for more space inside the card */
+}
+
+.card-body {
+  padding-top: 1rem;
+}
+
+.img-fluid {
+  border-radius: 50%;
+}
+
+.btn-primary {
+  background-color: #4b0f1e;
+  border-color: #4b0f1e;
+}
+
+.btn-primary:hover {
+  background-color: #3a0c18;
+  border-color: #3a0c18;
+}

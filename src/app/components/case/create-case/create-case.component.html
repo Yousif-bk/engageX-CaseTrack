@@ -1,1 +1,82 @@
-<p>create-case works!</p>
+<div class="container my-5 w-50">
+  <nav aria-label="breadcrumb" class="mt-4">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/landing">Home</a>
+      </li>
+      <li class="breadcrumb-item active" style="color: #4b0f1e;" aria-current="page">Create a Technical Support Case</li>
+    </ol>
+  </nav>
+
+
+  <div class="card shadow-light">
+    <div class="card-body">
+      <h5 class="card-title mb-4">Create a Technical Support Case</h5>
+      <hr>
+      <h6 class="card-title mb-4">Please provide as much detail as possible to aid our engineers in investigating your
+        case.</h6>
+      <hr>
+      <form [formGroup]="createCaseForm" (ngSubmit)="createCase()">
+        <div class="mb-3">
+          <label for="casePriority" class="form-label">Product</label>
+          <select class="form-select" id="casePriority" formControlName="priority">
+            <option selected>Select product</option>
+            <option value="1">ECM</option>
+            <option value="2">NICE</option>
+            <option value="3">IMI</option>
+          </select>
+          <div class="v-message"
+            *ngIf="(uiState.isSubmitting && createCaseForm.get('priority')?.hasError('required')
+                                                                     || createCaseForm.get('priority')?.touched && createCaseForm.get('priority')?.hasError('required'))">
+            <span> Priority is <strong>required</strong></span>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="caseTitle" class="form-label">Case Subject</label>
+          <input type="text" class="form-control" id="caseTitle" placeholder="Enter case title"
+            formControlName="subject">
+          <div class="v-message"
+            *ngIf="(uiState.isSubmitting && createCaseForm.get('subject')?.hasError('required')
+                                           || createCaseForm.get('subject')?.touched && createCaseForm.get('subject')?.hasError('required'))">
+            <span> Subject is <strong>required</strong></span>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="caseDescription" class="form-label">Case Description</label>
+          <textarea class="form-control" id="caseDescription" rows="4" placeholder="Enter case description"
+            formControlName="description"></textarea>
+          <div class="v-message"
+            *ngIf="(uiState.isSubmitting && createCaseForm.get('description')?.hasError('required')
+                                                   || createCaseForm.get('description')?.touched && createCaseForm.get('description')?.hasError('required'))">
+            <span> Descriptionis <strong>required</strong></span>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="casePriority" class="form-label">Priority</label>
+          <select class="form-select" id="casePriority" formControlName="priority">
+            <option selected>Select priority</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="Medium">High</option>
+          </select>
+          <div class="v-message"
+            *ngIf="(uiState.isSubmitting && createCaseForm.get('priority')?.hasError('required')
+                                                           || createCaseForm.get('priority')?.touched && createCaseForm.get('priority')?.hasError('required'))">
+            <span> Priority is <strong>required</strong></span>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" [disabled]="uiState.isLoading" class="btn btn-primary" style="width: 100px;">
+            <div *ngIf="uiState.isLoading" class="spinner-grow spinner-grow-sm">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <span *ngIf="!uiState.isLoading">Submit</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

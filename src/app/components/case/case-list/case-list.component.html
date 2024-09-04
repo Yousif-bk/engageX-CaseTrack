@@ -1,1 +1,41 @@
-<p>case-list works!</p>
+<div class="container my-5">
+  <h2 class="mb-4">All Cases</h2>
+  <div class="table-responsive">
+    <table class="table table-hover table-striped align-middle shadow-sm">
+      <thead class="table-primary">
+        <tr>
+          <th scope="col">Case ID</th>
+          <th scope="col">Case Subject</th>
+          <th scope="col">Description</th>
+          <th scope="col">Priority</th>
+          <th scope="col">Status</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>System Outage</td>
+          <td>Critical system failure affecting all users.</td>
+          <td><span class="badge bg-danger">High</span></td>
+          <td><span class="badge bg-warning text-dark">Pending</span></td>
+          <td>
+            <button class="btn btn-sm btn-info">View</button>
+            <button class="btn btn-sm btn-success">Resolve</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Login Issues</td>
+          <td>Users are unable to log in to their accounts.</td>
+          <td><span class="badge bg-warning">Medium</span></td>
+          <td><span class="badge bg-success">Resolved</span></td>
+          <td>
+            <button class="btn btn-sm btn-info">View</button>
+            <button class="btn btn-sm btn-secondary" disabled>Resolve</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
