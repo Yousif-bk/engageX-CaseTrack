@@ -1,0 +1,11 @@
+.navbar {
+  padding: 1rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #333;
+}

@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LandingComponent } from './components/landing/landing.component';
+import { routes } from './shared/routes.routes';
 
-const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: 'full' },
-  // { path: 'auth/login', loadComponent: () => import('./components/auth/login') },
-  { path: '**', redirectTo: 'home' }
-];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
